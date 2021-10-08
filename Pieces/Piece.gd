@@ -27,6 +27,7 @@ func _physics_process(_delta):
 func move_piece(change):
 	target_position = position + change
 	position = target_position
+	
 
 func die():
 	dying = true;
