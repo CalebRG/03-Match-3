@@ -1,51 +1,46 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://UI/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Menu/Untitled-1.png" type="Texture" id=2]
+[ext_resource path="res://Menu/quit.png" type="Texture" id=3]
+[ext_resource path="res://Menu/play.png" type="Texture" id=4]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 1.0
+margin_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="ColorRect" parent="."]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 566.0
-margin_bottom = 482.0
-color = Color( 0, 0, 0, 0.501961 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="."]
-margin_right = 576.0
-margin_bottom = 512.0
-text = "Welcome to Match-3"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -9.8996, 3.32123 )
+scale = Vector2( 1.02946, 1.02946 )
+texture = ExtResource( 2 )
+centered = false
 
 [node name="Play" type="Button" parent="."]
-margin_left = 238.0
-margin_top = 512.0
-margin_right = 338.0
-margin_bottom = 552.0
-text = "Play"
+margin_left = -32.08
+margin_top = 593.592
+margin_right = 979.92
+margin_bottom = 1599.59
+rect_scale = Vector2( 0.488, 0.488 )
+icon = ExtResource( 4 )
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Quit" type="Button" parent="."]
-margin_left = 238.0
-margin_top = 562.0
-margin_right = 338.0
-margin_bottom = 602.0
-text = "Quit"
+margin_left = 308.551
+margin_top = 764.307
+margin_right = 1320.55
+margin_bottom = 1770.31
+rect_scale = Vector2( 0.319, 0.319 )
+icon = ExtResource( 3 )
+flat = true
 
 [connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
