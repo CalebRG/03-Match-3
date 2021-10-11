@@ -8,6 +8,8 @@ var target_position = Vector2(0,0)
 var default_modulate = Color(1,1,1,1)
 var highlight = Color(1,0.8,0,1)
 
+var sound_1 = null
+
 var dying = false
 
 func _ready():
@@ -27,6 +29,10 @@ func _physics_process(_delta):
 func move_piece(change):
 	target_position = position + change
 	position = target_position
+	if sound_1 == null:
+		sound_1 = get_node_or_null("/root/Game/mouthpop")
+	if sound_1 != null:
+		sound_1.play()
 	
 
 func die():
