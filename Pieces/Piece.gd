@@ -9,6 +9,9 @@ var default_modulate = Color(1,1,1,1)
 var highlight = Color(1,0.8,0,1)
 
 var sound_1 = null
+var sound_2 = null
+
+var die = preload("res://BreakAnim/Break.tscn")
 
 var dying = false
 
@@ -37,3 +40,7 @@ func move_piece(change):
 
 func die():
 	dying = true;
+	if sound_2 == null:
+		sound_2 = get_node_or_null("/root/Game/die")
+	if sound_2 != null:
+		sound_2.play()
