@@ -7,6 +7,8 @@ var selected = false
 var target_position = Vector2(0,0)
 var default_modulate = Color(1,1,1,1)
 var highlight = Color(1,0.8,0,1)
+var wiggle = 0.0
+export var wiggle_amount = .5
 
 var sound_1 = null
 var sound_2 = null
@@ -27,7 +29,6 @@ func _physics_process(_delta):
 	else:
 		if modulate != default_modulate:
 			modulate = default_modulate
-		
 
 func move_piece(change):
 	target_position = position + change
